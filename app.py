@@ -40,6 +40,16 @@ class EpisodeByID(Resource):
         else:
             return make_response(jsonify({"error": "Episode not found"}), 404)
 
+    def delete(self, id):
+        episode = Episode.query.filter_by(id=id).first()
+
+        if episode:
+            db.session.delete(episode)
+            db.session.commit()
+            return make_response('', 204)
+        else:
+            return make_response(jsonify({"error": "Episode not found"}), 404)
+
 
 class Guests(Resource):
     def get(self):

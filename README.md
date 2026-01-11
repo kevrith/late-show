@@ -215,7 +215,23 @@ Returns a list of all guests.
 ]
 ```
 
-### 4. POST /appearances
+### 4. DELETE /episodes/:id
+
+Deletes a specific episode and all associated appearances.
+
+**Response** (204 No Content):
+```
+(Empty response body)
+```
+
+**Response** (404 Not Found):
+```json
+{
+  "error": "Episode not found"
+}
+```
+
+### 5. POST /appearances
 
 Creates a new appearance linking a guest to an episode.
 
@@ -412,11 +428,13 @@ Contributions are welcome! Please follow these steps:
 
 ## License
 
-This project is created for educational purposes as part of a coding challenge.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+
 
 ## Author
 
-Created as part of Phase 4 Flask API development challenge.
+Kelvin Murithi Johnson
 
 ## Acknowledgments
 
